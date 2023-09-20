@@ -1,0 +1,280 @@
+body{font-family:'Georama', sans-serif;color:#091353;}
+
+h1,h2,h3,h5,h6{font-family:'Raleway', sans-serif;}
+
+h3{font-size:3em;}
+h4{font-size:1.5em; color:#A12568}
+a{color: orangered;}
+
+section{margin-top:3em;}
+.fa{color:#fff; font-size:2em;}
+
+
+/*overlay*/
+
+.overlay::before{
+    width: 100%;
+    height: 100%;
+    content:"";
+    background:url("../images/noise.png") repeat 0 0 rgba(0,0,0,0.4);
+    top: 0;
+    position:absolute;
+    
+}
+
+
+/*Header*/
+
+header{background:#091353;position:fixed; left:0; width:100vw; z-index:10; border-bottom: 4px solid orangered;} 
+
+header a{text-transform: uppercase;color: #f1f1f1;}
+
+header a:hover{color:orangered;}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{background-color: orangered;}
+
+ul.nav.nav-pills.justify-content-center.nav-fill{padding:2em;}
+
+
+/*partie presentation*/
+
+#presentation{flex-direction:column; background:url(../images/banner1.jpg) no-repeat 0 0 #000; height:800px; background-size:cover; color:gainsboro; position:relative; margin-top:-1em;}
+
+#presentation h1,#presentation h2{z-index:1;}
+.liens{z-index:1}
+
+
+/*partie equipe*/
+
+#equipe{flex-direction:column;}
+
+.flex{display:flex; flex-direction:column;}
+
+.carousel{margin:2% 0;}
+
+.vignette{width:200px; height:200px; border-radius:50%; opacity:0.5; padding:0 1.5%;}
+
+.vignette.active{transform:scale(1.2); opacity:1;}
+
+#equipe .fa{color:#fff;}
+
+.icon-titre{width:60px; height:60px; background:#091353; transform:rotate(45deg); display:flex; margin-bottom: 2em;}
+
+.icon-titre .fa{transform:rotate(-45deg);}
+
+
+/*partie compteur*/
+
+#compteur{background:url("../images/banner4.jpg")no-repeat 0 0 fixed #000;height: 250px; background-size:cover; color:#f1f1f1; position:relative;}
+
+#compteur h4{color:orangered; font-size: 2.5em;}
+#compteur h5{text-transform:uppercase;}
+
+/*configuration des icones pour la partie compteur*/
+
+.icon-compteur{width:60px; height:60px; transform:rotate(45deg); border:2px solid #f1f1f1; display:flex; margin:0 auto; margin-bottom:5%}
+
+.icon-compteur .fa{transform: rotate(-45deg);}
+
+
+/*partie portfolio*/
+
+#portfolio figure{flex:1;position: relative;}
+#portfolio figcaption{
+    position: absolute; 
+    top:0; 
+    color: #f1f1f1; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    flex-direction:column; 
+    height:100%; 
+    width:95%;
+    background:url(../images/noise1.png) repeat 0 0 scroll rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: scale(0);
+    transition:all 2s;
+}
+
+#portfolio h5{color: #f1f1f1;}
+
+#portfolio a:hover figcaption{opacity: 1; transform:scale(1);}
+
+.effet-hover{overflow:hidden; width:95%;}
+
+#portfolio img{transition:all 2s;}
+
+#portfolio a:hover img{transform: rotate(45deg) scale(2.5);}
+
+
+/*progress bar*/
+
+.progress{width:100%; height:35px; background-color:midnightblue;position: relative;margin: 1em}
+
+.progress-bar{background:orangered; width:70%; height:35px; animation:barre-animee 5s 1;}
+
+.barre2{background:orangered; width:50%; animation:barre-animee2 5s 1;}
+
+.barre3{background:orangered; width:30%; animation:barre-animee3 5s 1;}
+
+.barre4{background:orangered; width:60%; animation:barre-animee4 5s 1;}
+
+.progress-bar::after{
+    content:"";
+    border-left:20px solid orangered;
+    border-bottom:19px solid transparent;
+    border-top:18px solid transparent;
+    position: absolute;
+    top:0;
+    left:70%;
+    animation: triangle 5s 1;
+}
+
+.barre2::after{
+    left:50%;
+    border-left-color:orangered;
+    animation:triangle2 5s 1;
+}
+
+
+.barre3::after{
+    left: 30%;
+    border-left-color:orangered;
+    animation:triangle3 5s 1;
+}
+
+.barre4::after{
+    left: 60%;
+    border-left-color:orangered;
+    animation:triangle4 5s 1;
+}   
+
+/*debut des @keyframes*/
+
+@keyframes barre-animee{
+    
+    0%{width: 0%;}
+    100%{width: 70%;} 
+}
+
+@keyframes triangle{
+    
+    0%{left:0%;}
+    100%{left:70%;}    
+}
+
+
+
+
+@keyframes barre-animee2{
+    
+    0%{width:0%;}
+    100%{width:50%;}  
+}
+
+@keyframes triangle2{
+    
+    0%{left:0%;}
+    100%{left:50%;}
+}
+
+
+
+
+@keyframes barre-animee3{
+    
+    0%{width:0%;}
+    100%{width:30%;}  
+}
+
+
+@keyframes triangle3{
+    
+    0%{left:0%;}
+    100%{left:30%;}
+}
+
+
+
+
+@keyframes barre-animee4{
+    
+    0%{width:0%;}
+    100%{width:60%;}  
+}
+
+@keyframes triangle4{
+    
+    0%{left:0%;}
+    100%{left:60%;}
+}
+
+
+
+.texte-barre{text-transform: uppercase;opacity: 1;animation: texte-span 7s 1;}
+
+@keyframes texte-span{
+    
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+
+/*Actualites*/
+
+#actualites{background: #f0f0f0;}
+.actu{margin-top: 2em;}
+#actualites article{ 
+    background:#fff; 
+    border-top: 5px solid orangered; 
+    padding:1em; 
+    margin-bottom:3em;
+    position: relative;
+    margin-top: 1.5em;}  
+
+#actualites article a{ font-size:0.7em;}
+#actualites article span{ font-size:0.7em;}
+#actualites article p{ font-size: 0.9em;}
+#actualites article a .fa{ color:orangered; font-size:1.3em;}
+
+#actualites .icon-article{ background:orangered; position:absolute; top:-7%; left:43%; width:40px; height: 40px; }
+#actualites .icon-titre.icon-article i{ font-size:1.3em;}
+
+#actualites h4{ margin-top:1em;}
+
+#actualites figure{ margin-bottom:-8.4%;}
+
+
+/*MAP*/
+
+#map{ flex-direction:column;}
+
+.bandeau{ background: orangered;}
+
+.bandeau h6{color: #f1f1f1;font-size: 1.5em;text-transform: uppercase;padding: 1.5em;}
+
+
+/*Formulaire*/
+
+input,textarea{margin:1em;}
+
+#contact form{width: 75%;}
+
+#contact .petit{width: 75%;}
+
+.btn-danger{background-color: orangered;}
+
+
+/*Footer*/
+
+footer{flex-direction:column; background:#091353; color:#f1f1f1; border-top:5px solid orangered; margin-top:3em; padding-bottom:1.5em;}
+
+footer h6{font-size:1em;}
+
+.social .fa{color:#f1f1f1;font-size:1.2em;transform: rotate(-45deg)}
+
+.etiquette{width:10em; background:orangered; padding:1em;border-radius: 0 0 2% 2%; margin-bottom:2.5em;}
+
+.social span{width:35px; height:35px; background:orangered; transform:rotate(45deg); margin:0.7em; display:flex; justify-content:center; align-items:center; border: 1px solid #f1f1f1;}
+
+.social span:hover{background:#091353;}
